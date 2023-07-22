@@ -8,5 +8,8 @@ RSpec.describe "merchants index page", type: :feature do
     expect(page).to have_link("Schroeder-Jerde")
     expect(page).to have_link("Koepp LLC")
     expect(page).to have_link("Glover Inc")
+
+    click_link "Schroeder-Jerde"
+    expect(current_path).to eq(merchant_path(1))
   end
 end
